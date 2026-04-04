@@ -259,8 +259,10 @@
   @media (max-width: 768px) {
     .hero { grid-template-columns: 1fr; padding: 60px 24px 40px; min-height: auto; }
     .hero-right { justify-content: center; }
+    .hero-title { font-size: clamp(28px, 7vw, 38px); }
     .phone-mockup { width: 260px; }
     section { padding: 60px 24px; }
+    .section-desc { text-align: left; }
     .grid-2, .grid-3, .grid-2-5 { grid-template-columns: 1fr; }
     footer { padding: 40px 24px; }
     .footer-main { flex-direction: column; gap: 24px; }
@@ -283,7 +285,6 @@
         <span class="btn-large">App Store</span>
       </span>
     </a>
-    <div class="brand-badge">サービス名 <span class="brand-name">movell</span></div>
   </div>
 
   <div class="hero-right">
