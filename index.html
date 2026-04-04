@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>movell — 離婚の条件整理メモ</title>
+<title>movell — 離婚の条件整理ノート</title>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -220,6 +220,40 @@
   .footer-links a svg { width: 14px; height: 14px; stroke: var(--sub); fill: none; stroke-width: 1.5; }
   .footer-copy { text-align: center; font-size: 13px; color: var(--sub); }
 
+  /* ── REFORM BADGE ── */
+  .reform-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--green);
+    color: #fff;
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 12px;
+    font-weight: 600;
+    width: fit-content;
+    letter-spacing: 0.02em;
+  }
+  .reform-badge-dot {
+    width: 6px;
+    height: 6px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* ── CTA CHARACTER ── */
+  @keyframes charFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-14px); }
+  }
+  .cta-char {
+    width: 110px;
+    height: auto;
+    animation: charFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(61,90,69,0.18));
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 768px) {
     .hero { grid-template-columns: 1fr; padding: 60px 24px 40px; min-height: auto; }
@@ -238,6 +272,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
+    <div class="reform-badge"><span class="reform-badge-dot"></span>2026年4月 民法改正対応</div>
     <h1 class="hero-title">離婚の話し合い<br>に入る前に、<br>まず自分の考え<br>を整理する。</h1>
     <p class="hero-desc">親権、養育費、面会交流、財産分与などを、<br>自分のペースで整理できるアプリです。</p>
     <a href="https://apps.apple.com/jp/app/movell-%E9%9B%A2%E5%A9%9A%E3%81%AE%E6%9D%A1%E4%BB%B6%E6%95%B4%E7%90%86%E3%83%8E%E3%83%BC%E3%83%88/id6760285216" target="_blank" class="app-store-btn">
@@ -431,9 +466,10 @@
 
 <!-- CTA -->
 <div class="cta">
+  <img src="images/Charactor.png" alt="" class="cta-char">
   <h2 class="cta-title">まずは自分の考えを、<br>整理することから。</h2>
   <p class="cta-desc">movellで、落ち着いて離婚条件を整理してみませんか。</p>
-  <a href="#" class="app-store-btn">
+  <a href="https://apps.apple.com/jp/app/movell-%E9%9B%A2%E5%A9%9A%E3%81%AE%E6%9D%A1%E4%BB%B6%E6%95%B4%E7%90%86%E3%83%8E%E3%83%BC%E3%83%88/id6760285216" target="_blank" class="app-store-btn">
     <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
     <span class="btn-text">
       <span class="btn-small">Download on the</span>
@@ -447,7 +483,7 @@
   <div class="footer-main">
     <div class="footer-brand">
       <span class="footer-logo">movell</span>
-      <span class="footer-tagline">離婚の条件整理メモ</span>
+      <span class="footer-tagline">離婚の条件整理ノート</span>
     </div>
     <div class="footer-links">
       <a href="privacy.html">
