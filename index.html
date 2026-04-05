@@ -100,7 +100,7 @@
   /* ── SECTIONS ── */
   section { padding: 100px 80px; }
   .section-title { font-size: clamp(28px, 3vw, 42px); font-weight: 600; text-align: center; margin-bottom: 16px; }
-  .section-desc { text-align: center; color: var(--sub); font-size: 16px; line-height: 1.8; margin-bottom: 56px; }
+  .section-desc { text-align: center; color: var(--sub); font-size: 16px; line-height: 1.6; margin-bottom: 56px; max-width: 100%; }
 
   /* ── CARDS GRID ── */
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -263,8 +263,8 @@
     .phone-mockup { width: 260px; }
     section { padding: 60px 24px; }
     /* 本文pタグを左寄せに統一 */
-    p { text-align: left; }
-    .section-desc { text-align: left; }
+    p { text-align: left; max-width: 100%; padding: 0 16px; line-height: 1.6; }
+    .section-desc { text-align: left; padding: 0; }
     /* movellの立ち位置 見出しのはみ出し対策 */
     .position-card { padding: 28px 20px; }
     .position-header h2 { font-size: 20px; overflow-wrap: break-word; }
@@ -309,7 +309,7 @@
 <!-- こんな人に -->
 <section>
   <h2 class="section-title">離婚準備中のこんな方に</h2>
-  <p class="section-desc">movellは、協議離婚を考え始めた方や話し合い中の方が、<br>落ち着いて離婚の条件を整理するためのアプリです。</p>
+  <p class="section-desc">協議離婚を考え始めた方や話し合い中の方向けの整理アプリです。</p>
   <div class="grid-2">
     <div class="card">
       <div class="icon-wrap">
@@ -451,7 +451,7 @@
 <!-- よくある質問 -->
 <section>
   <h2 class="section-title">よくある質問</h2>
-  <p class="section-desc">movellについてよくいただく質問をまとめました。</p>
+  <p class="section-desc">よくある質問をまとめました。</p>
   <div class="faq-card">
     <details>
       <summary>法律相談はできますか?<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
