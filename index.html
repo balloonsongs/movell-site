@@ -256,8 +256,10 @@
   }
 
   /* ── RESPONSIVE ── */
+  .sp-br { display: none; }
   @media (max-width: 768px) {
     .pc-br { display: none; }
+    .sp-br { display: inline; }
     .hero { grid-template-columns: 1fr; padding: 60px 24px 40px; min-height: auto; }
     .hero-right { justify-content: center; }
     .hero-title { font-size: clamp(28px, 7vw, 38px); }
@@ -311,7 +313,7 @@
 <!-- こんな人に -->
 <section>
   <h2 class="section-title">離婚準備中のこんな方に</h2>
-  <p class="section-desc">協議離婚を考え始めた方や話し合い中の方向けの整理アプリです。</p>
+  <p class="section-desc">協議離婚を考え始めた方や<br class="sp-br">話し合い中の方向けの整理アプリです。</p>
   <div class="grid-2">
     <div class="card">
       <div class="icon-wrap">
