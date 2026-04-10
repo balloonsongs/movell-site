@@ -89,12 +89,40 @@
     border-radius: 36px;
     overflow: hidden;
     aspect-ratio: 9/19;
+    position: relative;
   }
   .phone-screen img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
+    position: absolute;
+    top: 0; left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .phone-screen img.active { opacity: 1; }
+
+  /* Slider dots */
+  .slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+  }
+  .slider-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--border);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    border: none;
+    padding: 0;
+  }
+  .slider-dot.active {
+    background: var(--green);
+    transform: scale(1.3);
   }
 
   /* ── SECTIONS ── */
@@ -303,9 +331,20 @@
   </div>
 
   <div class="hero-right">
-    <div class="phone-mockup">
-      <div class="phone-screen">
-        <img src="images/app-screen.png" alt="movellアプリ画面">
+    <div>
+      <div class="phone-mockup">
+        <div class="phone-screen" id="phoneSlider">
+          <img src="images/screen1-welcome.png" alt="movell ウェルカム画面" class="active">
+          <img src="images/screen2-topics.png" alt="movell 整理したいこと選択">
+          <img src="images/screen3-custody.png" alt="movell 親権・共同親権">
+          <img src="images/screen4-pdf.png" alt="movell PDF出力">
+        </div>
+      </div>
+      <div class="slider-dots" id="sliderDots">
+        <button class="slider-dot active" aria-label="画面1"></button>
+        <button class="slider-dot" aria-label="画面2"></button>
+        <button class="slider-dot" aria-label="画面3"></button>
+        <button class="slider-dot" aria-label="画面4"></button>
       </div>
     </div>
   </div>
@@ -546,5 +585,41 @@
   <div class="footer-copy">© 2026 movell. すべての権利を保有します。</div>
 </footer>
 
+<script>
+(function() {
+  const slides = document.querySelectorAll('#phoneSlider img');
+  const dots   = document.querySelectorAll('#sliderDots .slider-dot');
+  let current  = 0;
+  let timer;
+
+  function goTo(n) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (n + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function next() { goTo(current + 1); }
+
+  function startAuto() { timer = setInterval(next, 3200); }
+  function resetAuto()  { clearInterval(timer); startAuto(); }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => { goTo(i); resetAuto(); });
+  });
+
+  // Swipe support
+  let startX = 0;
+  const slider = document.getElementById('phoneSlider');
+  slider.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  slider.addEventListener('touchend',   e => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 30) { goTo(current + (diff > 0 ? 1 : -1)); resetAuto(); }
+  });
+
+  startAuto();
+})();
+</script>
 </body>
 </html>
