@@ -286,6 +286,39 @@
     filter: drop-shadow(0 10px 20px rgba(61,90,69,0.18));
   }
 
+  /* ── ガイドバナー ── */
+  .guide-section { padding: 0 80px 80px; }
+  .guide-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    text-decoration: none;
+    color: var(--text);
+    max-width: 900px;
+    margin: 0 auto;
+    transition: box-shadow 0.2s;
+  }
+  .guide-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+  .guide-tag {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--green);
+    background: #EEF3EF;
+    padding: 4px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+  .guide-content { flex: 1; }
+  .guide-title { font-size: 16px; font-weight: 600; margin-bottom: 4px; color: var(--text); }
+  .guide-desc { font-size: 13px; color: var(--sub); line-height: 1.6; margin: 0; }
+  .guide-arrow { flex-shrink: 0; font-size: 14px; font-weight: 600; color: var(--green); }
+
   /* ── RESPONSIVE ── */
   .sp-br { display: none; }
   @media (max-width: 768px) {
@@ -324,6 +357,11 @@
     /* FAQ */
     summary { padding: 16px 18px; font-size: 14px; }
     .faq-answer { padding: 0 18px 16px; font-size: 13px; }
+
+    /* ガイドバナー */
+    .guide-section { padding: 0 20px 52px; }
+    .guide-card { flex-wrap: wrap; gap: 14px; padding: 20px; }
+    .guide-arrow { width: 100%; text-align: right; }
 
     /* CTA */
     .cta { padding: 60px 20px; gap: 22px; }
@@ -603,6 +641,18 @@
   </div>
 </section>
 
+<!-- ガイドバナー -->
+<section class="guide-section">
+  <a href="prepare.html" class="guide-card">
+    <span class="guide-tag">離婚準備ガイド</span>
+    <div class="guide-content">
+      <div class="guide-title">離婚前に決めておくこと・話し合いリスト</div>
+      <p class="guide-desc">親権・養育費・財産分与・親子交流など、話し合いを始める前に整理しておきたい項目をまとめました。2026年4月改正対応。</p>
+    </div>
+    <span class="guide-arrow">読む →</span>
+  </a>
+</section>
+
 <!-- CTA -->
 <div class="cta">
   <img src="images/Charactor.png" alt="" class="cta-char">
@@ -624,6 +674,10 @@
       <span class="footer-tagline">movell（ムーベル）離婚の条件整理ノート</span>
     </div>
     <div class="footer-links">
+      <a href="prepare.html">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        離婚準備ガイド
+      </a>
       <a href="privacy.html">
         <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
         プライバシーポリシー
