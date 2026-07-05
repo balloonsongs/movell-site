@@ -244,4 +244,14 @@ a.app-store-btn {
   font-size: 13px;
   color: var(--sub);
 }
-.site-footer a { color: var(--sub); margin: 0 10px; }
+.site-footer div:first-child {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 24px;
+}
+.site-footer a {
+  color: var(--sub);
+  margin: 0;
+  white-space: nowrap;
+}
