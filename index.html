@@ -322,6 +322,34 @@
   .guide-desc { font-size: 13px; color: var(--sub); line-height: 1.6; margin: 0; }
   .guide-arrow { flex-shrink: 0; font-size: 14px; font-weight: 600; color: var(--green); }
 
+  /* ── コラムパネル ── */
+  .column-section { padding: 0 80px 100px; }
+  .column-char { width: 56px; height: auto; display: block; margin: 0 auto 12px; }
+  .column-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 26px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--text);
+    transition: box-shadow 0.2s;
+  }
+  .column-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+  .column-card .guide-tag { align-self: flex-start; }
+  .column-title { font-size: 15.5px; font-weight: 600; line-height: 1.65; }
+  .column-desc { font-size: 13px; color: var(--sub); line-height: 1.7; flex: 1; margin: 0; }
+  .column-card .guide-arrow { align-self: flex-end; font-size: 13px; }
+  .column-more-wrap { text-align: center; margin-top: 28px; }
+  .column-more {
+    color: var(--green);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
   /* ── PRICE NOTE ── */
   .price-note {
     display: flex;
@@ -485,10 +513,9 @@
     summary { padding: 16px 18px; font-size: 14px; }
     .faq-answer { padding: 0 18px 16px; font-size: 13px; }
 
-    /* ガイドバナー */
-    .guide-section { padding: 0 20px 52px; }
-    .guide-card { flex-wrap: wrap; gap: 14px; padding: 20px; }
-    .guide-arrow { width: 100%; text-align: right; }
+    /* コラムパネル */
+    .column-section { padding: 0 20px 52px; }
+    .column-card { padding: 20px 18px; }
 
     /* MID CTA */
     .mid-cta { padding: 52px 20px; }
@@ -888,17 +915,34 @@
   </a>
 </div>
 
-<!-- ガイドバナー -->
-<section class="guide-section">
-  <a href="prepare.html" class="guide-card">
-    <img src="images/CharactorRest1.png" alt="" class="guide-char">
-    <span class="guide-tag">離婚準備ガイド</span>
-    <div class="guide-content">
-      <div class="guide-title">離婚前に決めておくこと・話し合いリスト</div>
-      <p class="guide-desc">親権・養育費・財産分与・親子交流など、話し合いを始める前に整理しておきたい項目をまとめました。2026年4月改正対応。</p>
-    </div>
-    <span class="guide-arrow">読む →</span>
-  </a>
+<!-- 離婚準備コラム -->
+<section class="column-section">
+  <img src="images/CharactorRest1.png" alt="" class="column-char">
+  <h2 class="section-title">離婚準備コラム</h2>
+  <p class="section-desc">公的機関への出典つきで、<br class="sp-br">離婚準備の疑問をひとつずつ整理しています。</p>
+  <div class="grid-3">
+    <a href="prepare.html" class="column-card">
+      <span class="guide-tag">離婚準備ガイド</span>
+      <div class="column-title">離婚前に決めておくこと・話し合いリスト</div>
+      <p class="column-desc">親権・養育費・財産分与・親子交流など、話し合いを始める前に整理しておきたい項目。2026年4月改正対応。</p>
+      <span class="guide-arrow">読む →</span>
+    </a>
+    <a href="articles/kiroku.html" class="column-card">
+      <span class="guide-tag">記録・日記</span>
+      <div class="column-title">離婚前の記録の残し方——日記やメモは証拠になる？</div>
+      <p class="column-desc">記録の残し方のポイントと、相手に見られない安全な管理方法を整理しました。</p>
+      <span class="guide-arrow">読む →</span>
+    </a>
+    <a href="articles/koseishosho.html" class="column-card">
+      <span class="guide-tag">公正証書</span>
+      <div class="column-title">離婚の公正証書は自分で作れる？流れ・費用・必要書類</div>
+      <p class="column-desc">公証役場での作成の流れ・費用の考え方・必要書類と、申し込む前に決めておくべき条件。</p>
+      <span class="guide-arrow">読む →</span>
+    </a>
+  </div>
+  <div class="column-more-wrap">
+    <a href="articles/index.html" class="column-more">コラム一覧を見る →</a>
+  </div>
 </section>
 
 <!-- FOOTER -->
@@ -908,10 +952,6 @@
       <span class="footer-tagline">movell（ムーベル）離婚の条件整理ノート</span>
     </div>
     <div class="footer-links">
-      <a href="prepare.html">
-        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        離婚準備ガイド
-      </a>
       <a href="articles/index.html">
         <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
         離婚準備コラム
