@@ -497,6 +497,35 @@
     .footer-main { flex-direction: column; gap: 20px; }
     .footer-copy { word-break: keep-all; }
 
+    /* モバイルではカード群をコンパクトなリスト表示に */
+    .mobile-list {
+      display: flex;
+      flex-direction: column;
+      background: var(--white);
+      border-radius: var(--radius);
+      gap: 0;
+      padding: 6px 0;
+    }
+    .mobile-list .card {
+      background: transparent;
+      border-radius: 0;
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 12px !important;
+      padding: 13px 16px;
+    }
+    .mobile-list .card + .card { border-top: 1px solid #EFECE6; }
+    .mobile-list .icon-wrap {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      flex-shrink: 0;
+    }
+    .mobile-list .icon-wrap svg { width: 16px; height: 16px; }
+    .mobile-list .card-title { font-size: 14px; line-height: 1.5; }
+    .mobile-list .card-desc { display: none; }
+    .mobile-list .card > div { margin: 0 !important; }
+
     /* 本文のみ左寄せ（見出しはそれぞれで制御） */
     p { max-width: 100%; padding: 0; line-height: 1.7; }
     .hero-desc { line-height: 1.8; }
@@ -557,7 +586,7 @@
 <section>
   <h2 class="section-title">離婚準備中のこんな方に</h2>
   <p class="section-desc">協議離婚を考え始めた方から、<br class="sp-br">専門家への相談前・書類作成前まで。</p>
-  <div class="grid-3">
+  <div class="grid-3 mobile-list">
     <div class="card">
       <div class="icon-wrap">
         <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -580,7 +609,7 @@
       <div class="card-desc">親権、養育費、親子交流のルールなど、子どもに関する論点を抜け漏れなくまとめたい方に。</div>
     </div>
   </div>
-  <div class="grid-2" style="margin-top:20px;">
+  <div class="grid-2 mobile-list" style="margin-top:20px;">
     <div class="card">
       <div class="icon-wrap">
         <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
@@ -627,7 +656,7 @@
       <div class="card-title">整理した内容をPDFで出力</div>
       <div class="card-desc">弁護士への相談時のたたき台に、公正証書作成の下書きに。そのまま渡せる形で出力できます。</div>
     </div>
-    <div class="features-side">
+    <div class="features-side mobile-list">
       <div class="card">
         <div class="icon-wrap">
           <svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
@@ -644,7 +673,7 @@
       </div>
     </div>
   </div>
-  <div class="grid-2">
+  <div class="grid-2 mobile-list">
     <div class="card">
       <div class="icon-wrap">
         <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
@@ -683,7 +712,7 @@
 <section>
   <h2 class="section-title">あなたのデータは、<br class="sp-br">あなたの端末だけに</h2>
   <p class="section-desc">アカウント登録なし。外部サーバーへの送信なし。<br class="sp-br">端末の外に、あなたの情報は出ません。</p>
-  <div class="grid-2">
+  <div class="grid-2 mobile-list">
     <div class="card" style="flex-direction:row;align-items:flex-start;gap:20px;">
       <div class="icon-wrap" style="flex-shrink:0;">
         <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
