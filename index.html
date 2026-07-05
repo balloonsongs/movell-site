@@ -471,6 +471,7 @@
       min-height: auto;
       flex-direction: row !important;
       flex-wrap: wrap;
+      justify-content: flex-start;
       align-items: center;
       gap: 12px;
       padding: 16px;
@@ -540,18 +541,19 @@
     .mobile-list .card > div { margin: 0 !important; }
 
     /* できること: 緑カード下のリスト2箱も1枚に結合 */
-    .features-main { margin-bottom: 0; }
-    .features-main .mobile-list {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
-      padding-bottom: 0;
+    .features-main { margin-bottom: 0 !important; }
+    .features-side.mobile-list {
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+      padding-bottom: 0 !important;
+      margin-bottom: 0 !important;
     }
-    .features-main + .mobile-list {
-      margin-top: 0;
+    .features-main + .grid-2.mobile-list {
+      margin-top: 0 !important;
       border-top: 1px solid #EFECE6;
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
-      padding-top: 0;
+      border-top-left-radius: 0 !important;
+      border-top-right-radius: 0 !important;
+      padding-top: 0 !important;
     }
 
     /* 連続するmobile-listは1つのカードに見せる */
@@ -959,7 +961,7 @@
   let current  = 0;
   let timer;
 
-  const slideToStep = [1, 2, 2, 3];
+  const slideToStep = [1, 1, 2, 3];
   const stepItems = document.querySelectorAll('#stepLabels .step-item');
 
   function updateStep(n) {
