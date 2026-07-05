@@ -363,6 +363,25 @@
   .review-text { font-size: 15px; line-height: 1.85; color: var(--text); }
   .review-author { font-size: 13px; color: var(--sub); }
 
+  /* ── MID CTA ── */
+  .mid-cta {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 72px 80px;
+    background: #F0EBE3;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .mid-cta-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--green);
+    letter-spacing: 0.06em;
+  }
+
   /* ── RESPONSIVE ── */
   .sp-br { display: none; }
   @media (max-width: 768px) {
@@ -406,6 +425,9 @@
     .guide-section { padding: 0 20px 52px; }
     .guide-card { flex-wrap: wrap; gap: 14px; padding: 20px; }
     .guide-arrow { width: 100%; text-align: right; }
+
+    /* MID CTA */
+    .mid-cta { padding: 52px 20px; }
 
     /* CTA */
     .cta { padding: 60px 20px; gap: 22px; }
@@ -469,8 +491,8 @@
 <!-- こんな人に -->
 <section>
   <h2 class="section-title">離婚準備中のこんな方に</h2>
-  <p class="section-desc">離婚準備アプリ movell は、<br class="sp-br">協議離婚を考え始めた方や話し合い中の方向けの整理アプリです。</p>
-  <div class="grid-2">
+  <p class="section-desc">協議離婚を考え始めた方から、<br class="sp-br">専門家への相談前・書類作成前まで。</p>
+  <div class="grid-3">
     <div class="card">
       <div class="icon-wrap">
         <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
@@ -492,21 +514,8 @@
       <div class="card-title">親権・養育費・親子交流を整理したい</div>
       <div class="card-desc">親権、養育費、親子交流のルールなど、子どもに関する論点を抜け漏れなくまとめたい方に。</div>
     </div>
-    <div class="card">
-      <div class="icon-wrap">
-        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-      </div>
-      <div class="card-title">弁護士への相談前・公正証書作成前に整理したい</div>
-      <div class="card-desc">弁護士に相談する前にも、自分で公正証書の条件をまとめる前にも。整理した内容はPDFで出力でき、そのままたたき台として使えます。</div>
-    </div>
   </div>
-</section>
-
-<!-- 2つの使い方 -->
-<section>
-  <h2 class="section-title">あなたの状況に合わせて</h2>
-  <p class="section-desc">専門家へ相談する前にも、<br class="sp-br">ご自身で書類を作成される前にも。</p>
-  <div class="grid-2">
+  <div class="grid-2" style="margin-top:20px;">
     <div class="card">
       <div class="icon-wrap">
         <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
@@ -523,6 +532,23 @@
     </div>
   </div>
 </section>
+
+<!-- 中間CTA -->
+<div class="mid-cta">
+  <p class="mid-cta-label">まず試してみる</p>
+  <a href="https://apps.apple.com/jp/app/movell-%E9%9B%A2%E5%A9%9A%E3%81%AE%E6%9D%A1%E4%BB%B6%E6%95%B4%E7%90%86%E3%83%8E%E3%83%BC%E3%83%88/id6760285216" target="_blank" class="app-store-btn">
+    <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+    <span class="btn-text">
+      <span class="btn-small">Download on the</span>
+      <span class="btn-large">App Store</span>
+    </span>
+  </a>
+  <div class="price-note">
+    <span class="price-note-amount">¥1,500</span>
+    <span class="price-note-sep"></span>
+    <span>買い切り・サブスクなし</span>
+  </div>
+</div>
 
 <!-- できること -->
 <section>
