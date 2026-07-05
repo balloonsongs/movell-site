@@ -319,6 +319,50 @@
   .guide-desc { font-size: 13px; color: var(--sub); line-height: 1.6; margin: 0; }
   .guide-arrow { flex-shrink: 0; font-size: 14px; font-weight: 600; color: var(--green); }
 
+  /* ── PRICE NOTE ── */
+  .price-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--sub);
+    font-weight: 500;
+  }
+  .price-note-amount {
+    font-weight: 700;
+    color: var(--text);
+    font-size: 15px;
+  }
+  .price-note-sep {
+    width: 3px;
+    height: 3px;
+    background: var(--border);
+    border-radius: 50%;
+  }
+
+  /* ── REVIEWS ── */
+  .rating-summary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 48px;
+  }
+  .rating-stars-lg { color: #D4A843; font-size: 22px; letter-spacing: 3px; }
+  .rating-score { font-size: 30px; font-weight: 700; line-height: 1; }
+  .rating-count { font-size: 14px; color: var(--sub); }
+  .review-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .review-stars { color: #D4A843; font-size: 14px; letter-spacing: 2px; }
+  .review-text { font-size: 15px; line-height: 1.85; color: var(--text); }
+  .review-author { font-size: 13px; color: var(--sub); }
+
   /* ── RESPONSIVE ── */
   .sp-br { display: none; }
   @media (max-width: 768px) {
@@ -395,6 +439,11 @@
         <span class="btn-large">App Store</span>
       </span>
     </a>
+    <div class="price-note">
+      <span class="price-note-amount">¥1,500</span>
+      <span class="price-note-sep"></span>
+      <span>買い切り・サブスクなし</span>
+    </div>
   </div>
 
   <div class="hero-right">
@@ -581,6 +630,28 @@
   </div>
 </section>
 
+<!-- ユーザーの声 -->
+<section>
+  <h2 class="section-title">実際に使った人の声</h2>
+  <div class="rating-summary">
+    <span class="rating-stars-lg">★★★★★</span>
+    <span class="rating-score">4.8</span>
+    <span class="rating-count">（5件の評価）</span>
+  </div>
+  <div class="grid-2">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">「離婚がまだ現実的でない段階でも使えた。備えることが心の余裕につながると気づけた」</p>
+      <div class="review-author">キマミーさん / App Store</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">「無駄のないシンプルな設計。買い切りで、メンタルがつらい時期でも冷静に整理できた」</p>
+      <div class="review-author">awptjmさん / App Store</div>
+    </div>
+  </div>
+</section>
+
 <!-- よくある質問 -->
 <section>
   <h2 class="section-title">よくある質問</h2>
@@ -604,7 +675,7 @@
     </details>
     <details>
       <summary>無料で使えますか?<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
-      <div class="faq-answer">買い切り600円です。月額料金・追加課金なし、一度の購入でずっとお使いいただけます。</div>
+      <div class="faq-answer">買い切り1,500円です。月額料金・追加課金なし、一度の購入でずっとお使いいただけます。</div>
     </details>
     <details>
       <summary>共同親権に対応していますか?<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
