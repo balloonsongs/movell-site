@@ -504,23 +504,29 @@
   .card-featured .card-title { color: #fff; }
   .card-featured .card-desc { color: rgba(255,255,255,0.78); }
 
-  /* ── 開発の想いストリップ ── */
+  /* ── movellが生まれた理由 ── */
   .story-strip {
     text-align: center;
-    padding: 90px 80px;
+    padding: 100px 80px;
     background: #F0EBE3;
   }
-  .story-quote {
-    font-size: 16px;
+  .story-strip .section-title { margin-bottom: 40px; }
+  .story-lead {
+    font-size: 15px;
     line-height: 2.1;
-    color: var(--text);
-    margin-bottom: 22px;
+    color: var(--sub);
   }
-  .story-link {
-    color: var(--green);
+  .story-main-quote {
+    font-size: clamp(22px, 3vw, 30px);
     font-weight: 600;
-    font-size: 14px;
-    text-decoration: none;
+    color: var(--green);
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+    margin: 28px 0;
+  }
+  .story-close {
+    font-size: 15px;
+    color: var(--text);
   }
 
   /* ── RESPONSIVE ── */
@@ -679,9 +685,12 @@
     .mobile-list .card.open .card-desc { display: block; }
     .mobile-list .card.open > .card-desc { width: 100%; padding-left: 46px; }
 
-    /* 開発の想い */
-    .story-strip { padding: 48px 20px; }
-    .story-quote { font-size: 13.5px; line-height: 2; }
+    /* movellが生まれた理由 */
+    .story-strip { padding: 52px 20px; }
+    .story-strip .section-title { margin-bottom: 24px; }
+    .story-lead { font-size: 13.5px; }
+    .story-main-quote { font-size: clamp(19px, 5.5vw, 24px); margin: 20px 0; }
+    .story-close { font-size: 13.5px; }
 
     /* レビューをデータセクションより先に表示 */
     .proof-wrap { display: flex; flex-direction: column-reverse; }
@@ -957,10 +966,12 @@
 </section>
 </div>
 
-<!-- 開発の想い -->
+<!-- movellが生まれた理由 -->
 <section class="story-strip">
-  <p class="story-quote">movellは、身近な経験から生まれました。<br>精神的にいちばんしんどい時期の、ひどく骨の折れる離婚準備。<br>「もっと簡単にできる何かが、あればいいのに」——その思いが出発点です。</p>
-  <a href="about.html" class="story-link">movellについて →</a>
+  <h2 class="section-title">movellが生まれた理由</h2>
+  <p class="story-lead">movellは、身近な経験から生まれました。<br>精神的にいちばんしんどい時期の、ひどく骨の折れる離婚準備。</p>
+  <p class="story-main-quote">「もっと簡単にできる何かが、<br class="sp-br">あればいいのに」</p>
+  <p class="story-close">その思いが、movellの出発点です。</p>
 </section>
 
 <!-- よくある質問 -->
