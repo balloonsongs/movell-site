@@ -462,6 +462,25 @@
   .card-featured .card-title { color: #fff; }
   .card-featured .card-desc { color: rgba(255,255,255,0.78); }
 
+  /* ── 開発の想いストリップ ── */
+  .story-strip {
+    text-align: center;
+    padding: 90px 80px;
+    background: #F0EBE3;
+  }
+  .story-quote {
+    font-size: 16px;
+    line-height: 2.1;
+    color: var(--text);
+    margin-bottom: 22px;
+  }
+  .story-link {
+    color: var(--green);
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
   /* ── RESPONSIVE ── */
   .sp-br { display: none; }
   @media (max-width: 768px) {
@@ -617,6 +636,10 @@
     .mobile-list .card.open::after { transform: rotate(225deg); }
     .mobile-list .card.open .card-desc { display: block; }
     .mobile-list .card.open > .card-desc { width: 100%; padding-left: 46px; }
+
+    /* 開発の想い */
+    .story-strip { padding: 48px 20px; }
+    .story-quote { font-size: 13.5px; line-height: 2; }
 
     /* レビューをデータセクションより先に表示 */
     .proof-wrap { display: flex; flex-direction: column-reverse; }
@@ -891,6 +914,12 @@
   <div class="review-dots slider-dots" id="reviewDots"></div>
 </section>
 </div>
+
+<!-- 開発の想い -->
+<section class="story-strip">
+  <p class="story-quote">movellは、身近な経験から生まれました。<br>精神的にいちばんしんどい時期の、ひどく骨の折れる離婚準備。<br>「もっと簡単にできる何かが、あればいいのに」——その思いが出発点です。</p>
+  <a href="about.html" class="story-link">movellについて →</a>
+</section>
 
 <!-- よくある質問 -->
 <section>
