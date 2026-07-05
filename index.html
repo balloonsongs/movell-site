@@ -457,9 +457,10 @@
     .phone-mockup { width: min(290px, 74vw); }
 
     /* Sections */
-    section { padding: 52px 20px; }
+    .mobile-hide { display: none !important; }
+    section { padding: 44px 20px; }
     .section-title { font-size: clamp(20px, 5.5vw, 26px); text-align: center; }
-    .section-desc { font-size: 14px; text-align: center; margin-bottom: 32px; padding: 0 4px; }
+    .section-desc { font-size: 14px; text-align: center; margin-bottom: 24px; padding: 0 4px; }
 
     /* Cards */
     .grid-2, .grid-3, .grid-2-5 { grid-template-columns: 1fr; }
@@ -676,7 +677,7 @@
 <!-- できること -->
 <section>
   <h2 class="section-title">movellでできること</h2>
-  <p class="section-desc">離婚準備ノート movell の<br class="sp-br">主な機能をご紹介します。<br>あなたのペースで、<br class="sp-br">必要な項目を整理していくことができます。</p>
+  <p class="section-desc">あなたのペースで、<br class="sp-br">必要な項目をひとつずつ整理できます。</p>
   <div class="features-main">
     <div class="card card-featured">
       <div class="icon-wrap">
@@ -710,7 +711,7 @@
       <div class="card-title">Face ID対応</div>
       <div class="card-desc">Face IDによるロック機能で、プライベートな情報を安全に管理できます。</div>
     </div>
-    <div class="card">
+    <div class="card mobile-hide">
       <div class="icon-wrap">
         <svg viewBox="0 0 24 24"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>
       </div>
@@ -738,7 +739,7 @@
 </div>
 
 <!-- movellの立ち位置 -->
-<section>
+<section class="mobile-hide">
   <div class="position-card">
     <div class="position-header">
       <div class="icon-wrap">
@@ -823,7 +824,6 @@
 <!-- よくある質問 -->
 <section>
   <h2 class="section-title">よくある質問</h2>
-  <p class="section-desc">よくある質問をまとめました。</p>
   <div class="faq-card">
     <details>
       <summary>法律相談はできますか?<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
