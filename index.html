@@ -370,12 +370,16 @@
   .column-title { font-size: 15.5px; font-weight: 600; line-height: 1.65; }
   .column-desc { font-size: 13px; color: var(--sub); line-height: 1.7; flex: 1; margin: 0; }
   .column-card .guide-arrow { align-self: flex-end; font-size: 13px; }
-  .column-more-wrap { text-align: center; margin-top: 28px; }
-  .column-more {
-    color: var(--green);
-    font-size: 14px;
-    font-weight: 600;
+  .column-title-link {
+    color: inherit;
     text-decoration: none;
+  }
+  .column-title-link::after {
+    content: " →";
+    color: var(--green);
+    font-size: 0.6em;
+    font-weight: 600;
+    vertical-align: middle;
   }
 
   /* ── PRICE NOTE ── */
@@ -1028,7 +1032,7 @@
 <!-- 離婚準備コラム -->
 <section class="column-section">
   <img src="images/CharactorRest1.png" alt="" class="column-char">
-  <h2 class="section-title">離婚準備コラム</h2>
+  <h2 class="section-title"><a href="articles/index.html" class="column-title-link">離婚準備コラム</a></h2>
   <p class="section-desc">公的機関への出典つきで、<br class="sp-br">離婚準備の疑問をひとつずつ整理しています。</p>
   <div class="grid-3">
     <a href="prepare.html" class="column-card">
