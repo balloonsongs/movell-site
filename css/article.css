@@ -118,7 +118,7 @@ body {
 .article-body a { color: var(--green); }
 
 /* 出典リンク */
-.source-link {
+a.source-link {
   display: block;
   background: var(--white);
   border: 1px solid var(--border);
@@ -190,7 +190,7 @@ body {
 .app-cta img.cta-char { width: 72px; height: auto; margin-bottom: 8px; }
 .app-cta .app-cta-title { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
 .app-cta .app-cta-desc { font-size: 13.5px; color: var(--sub); margin-bottom: 18px; line-height: 1.8; }
-.app-store-btn {
+a.app-store-btn {
   display: inline-flex;
   align-items: center;
   gap: 12px;
