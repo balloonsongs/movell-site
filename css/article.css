@@ -29,14 +29,8 @@ body {
   border-bottom: 1px solid var(--border);
   background: var(--bg);
 }
-.site-logo {
-  font-family: ui-rounded, -apple-system, "Hiragino Sans", sans-serif;
-  font-weight: 800;
-  color: var(--green);
-  font-size: 17px;
-  letter-spacing: 0.01em;
-  text-decoration: none;
-}
+.site-logo { display: block; text-decoration: none; }
+.site-logo img { height: 20px; width: auto; display: block; }
 .site-header-cta {
   font-size: 13px;
   font-weight: 600;
