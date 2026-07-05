@@ -390,6 +390,12 @@
     flex-direction: column;
     gap: 16px;
   }
+  .review-track {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  .review-dots { display: none; }
   .review-stars { color: #D4A843; font-size: 14px; letter-spacing: 2px; }
   .review-text { font-size: 15px; line-height: 1.85; color: var(--text); }
   .review-author { font-size: 13px; color: var(--sub); }
@@ -614,6 +620,27 @@
 
     /* レビューをデータセクションより先に表示 */
     .proof-wrap { display: flex; flex-direction: column-reverse; }
+
+    /* レビュー: 横スワイプカルーセル */
+    .review-track {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 12px;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .review-track::-webkit-scrollbar { display: none; }
+    .review-track .review-card {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+    }
+    .review-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+    }
 
     /* 本文のみ左寄せ（見出しはそれぞれで制御） */
     p { max-width: 100%; padding: 0; line-height: 1.7; }
@@ -849,7 +876,7 @@
     <span class="rating-score">4.8</span>
     <span class="rating-count">（5件の評価）</span>
   </div>
-  <div class="grid-2">
+  <div class="review-track" id="reviewTrack">
     <div class="review-card">
       <div class="review-stars">★★★★★</div>
       <p class="review-text">「離婚がまだ現実的でない段階でも使えた。備えることが心の余裕につながると気づけた」</p>
@@ -861,6 +888,7 @@
       <div class="review-author">awptjmさん / App Store</div>
     </div>
   </div>
+  <div class="review-dots slider-dots" id="reviewDots"></div>
 </section>
 </div>
 
@@ -1040,6 +1068,45 @@
     const diff = startX - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 30) { goTo(current + (diff > 0 ? 1 : -1)); resetAuto(); }
   });
+
+  // レビューカルーセル（モバイルのみ自動送り・ドットは件数から自動生成）
+  (function() {
+    const track = document.getElementById('reviewTrack');
+    const dotsWrap = document.getElementById('reviewDots');
+    if (!track || !dotsWrap) return;
+    const cards = track.children.length;
+    const mq = window.matchMedia('(max-width: 768px)');
+    let idx = 0, timer = null;
+
+    for (let i = 0; i < cards; i++) {
+      const d = document.createElement('button');
+      d.className = 'slider-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'レビュー' + (i + 1));
+      d.addEventListener('click', () => { goTo(i); pauseThenResume(); });
+      dotsWrap.appendChild(d);
+    }
+    const dots = dotsWrap.children;
+
+    function setActive(i) {
+      idx = (i + cards) % cards;
+      for (let k = 0; k < cards; k++) dots[k].classList.toggle('active', k === idx);
+    }
+    function goTo(i) {
+      setActive(i);
+      track.scrollTo({ left: idx * (track.clientWidth + 12), behavior: 'smooth' });
+    }
+    function start() { if (!timer && mq.matches) timer = setInterval(() => goTo(idx + 1), 4000); }
+    function stop()  { clearInterval(timer); timer = null; }
+    function pauseThenResume() { stop(); setTimeout(start, 8000); }
+
+    track.addEventListener('touchstart', stop, { passive: true });
+    track.addEventListener('touchend', () => setTimeout(start, 8000), { passive: true });
+    track.addEventListener('scroll', () => {
+      setActive(Math.round(track.scrollLeft / (track.clientWidth + 12)));
+    }, { passive: true });
+    mq.addEventListener('change', () => { stop(); if (mq.matches) start(); });
+    start();
+  })();
 
   // モバイル: リスト行タップで説明を開閉
   document.querySelectorAll('.mobile-list .card').forEach(card => {
