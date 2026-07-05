@@ -592,7 +592,16 @@
     .column-card .guide-tag { display: none; }
     .column-title { font-size: 14px; line-height: 1.5; flex: 1; }
     .column-desc { display: none; }
-    .column-card .guide-arrow { align-self: center; font-size: 12px; flex-shrink: 0; }
+    .column-card .guide-arrow { display: none; }
+    .column-card::after {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-right: 1.5px solid var(--sub);
+      border-bottom: 1.5px solid var(--sub);
+      transform: rotate(-45deg);
+      flex-shrink: 0;
+    }
     .column-more-wrap { margin-top: 18px; }
 
     /* MID CTA */
