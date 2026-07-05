@@ -10,7 +10,7 @@
   --ink: #3A3F4A;
   --sub: #7C7F87;
   --accent: #3D5A45;        /* movellブランドグリーンをアクセントに */
-  --accent-soft: #EAEFEA;
+  --accent-soft: #E6EDE7;
   --line: #DDDAD3;
   --icon-bg: #ECEAE4;
   --radius: 18px;
@@ -36,6 +36,7 @@ body.menu-open { overflow: hidden; }
   scroll-margin-top: calc(var(--header-h) + 16px);
 }
 .section-inner { max-width: 1080px; margin: 0 auto; }
+.section--soft { background: var(--accent-soft); }
 .section-title {
   font-size: clamp(26px, 3vw, 38px);
   font-weight: 600;
