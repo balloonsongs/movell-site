@@ -587,6 +587,9 @@
     .mobile-list .card.open .card-desc { display: block; }
     .mobile-list .card.open > .card-desc { width: 100%; padding-left: 46px; }
 
+    /* レビューをデータセクションより先に表示 */
+    .proof-wrap { display: flex; flex-direction: column-reverse; }
+
     /* 本文のみ左寄せ（見出しはそれぞれで制御） */
     p { max-width: 100%; padding: 0; line-height: 1.7; }
     .hero-desc { line-height: 1.8; }
@@ -770,6 +773,7 @@
   </div>
 </section>
 
+<div class="proof-wrap">
 <!-- 安心材料 -->
 <section>
   <h2 class="section-title">あなたのデータは、<br class="sp-br">あなたの端末だけに</h2>
@@ -835,6 +839,7 @@
     </div>
   </div>
 </section>
+</div>
 
 <!-- よくある質問 -->
 <section>
