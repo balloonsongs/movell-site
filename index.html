@@ -464,9 +464,19 @@
 
     /* Cards */
     .grid-2, .grid-3, .grid-2-5 { grid-template-columns: 1fr; }
-    .features-main { grid-template-columns: 1fr; }
-    .card-featured { min-height: auto; padding: 28px 18px; }
-    .card-featured .card-title { font-size: 18px; }
+    .features-main { grid-template-columns: 1fr; gap: 12px; }
+    .card-featured {
+      min-height: auto;
+      flex-direction: row !important;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+    }
+    .card-featured .icon-wrap { width: 34px; height: 34px; border-radius: 9px; flex-shrink: 0; }
+    .card-featured .icon-wrap svg { width: 16px; height: 16px; }
+    .card-featured .card-title { font-size: 15px; }
+    .card-featured .card-desc { width: 100%; font-size: 12.5px; line-height: 1.6; }
     .card { padding: 20px 18px; gap: 10px; }
     .card-title { font-size: 15px; }
     .card-desc { font-size: 13px; line-height: 1.7; }
