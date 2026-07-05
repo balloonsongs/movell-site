@@ -526,6 +526,52 @@
     .mobile-list .card-desc { display: none; }
     .mobile-list .card > div { margin: 0 !important; }
 
+    /* できること: 緑カード下のリスト2箱も1枚に結合 */
+    .features-main { margin-bottom: 0; }
+    .features-main .mobile-list {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      padding-bottom: 0;
+    }
+    .features-main + .mobile-list {
+      margin-top: 0;
+      border-top: 1px solid #EFECE6;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      padding-top: 0;
+    }
+
+    /* 連続するmobile-listは1つのカードに見せる */
+    .mobile-list:has(+ .mobile-list) {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      padding-bottom: 0;
+    }
+    .mobile-list + .mobile-list {
+      margin-top: 0 !important;
+      border-top: 1px solid #EFECE6;
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      padding-top: 0;
+    }
+
+    /* リスト行はタップで説明を開閉 */
+    .mobile-list .card { flex-wrap: wrap; cursor: pointer; }
+    .mobile-list .card::after {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-right: 1.5px solid var(--sub);
+      border-bottom: 1.5px solid var(--sub);
+      transform: rotate(45deg);
+      margin-left: auto;
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .mobile-list .card.open::after { transform: rotate(225deg); }
+    .mobile-list .card.open .card-desc { display: block; }
+    .mobile-list .card.open > .card-desc { width: 100%; padding-left: 46px; }
+
     /* 本文のみ左寄せ（見出しはそれぞれで制御） */
     p { max-width: 100%; padding: 0; line-height: 1.7; }
     .hero-desc { line-height: 1.8; }
@@ -931,6 +977,11 @@
   slider.addEventListener('touchend',   e => {
     const diff = startX - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 30) { goTo(current + (diff > 0 ? 1 : -1)); resetAuto(); }
+  });
+
+  // モバイル: リスト行タップで説明を開閉
+  document.querySelectorAll('.mobile-list .card').forEach(card => {
+    card.addEventListener('click', () => card.classList.toggle('open'));
   });
 
   startAuto();
