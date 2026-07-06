@@ -699,8 +699,21 @@ footer {
   .story-card { padding: 36px 22px; }
   .story-main-quote { font-size: clamp(19px, 5.5vw, 24px); margin: 20px 0; }
 
-  footer { padding: 40px 20px; }
-  .footer-main { flex-direction: column; align-items: flex-start; gap: 20px; }
+  footer { padding: 36px 22px 44px; }
+  .footer-main { flex-direction: column-reverse; align-items: flex-start; gap: 26px; }
+  .footer-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 20px;
+    width: 100%;
+  }
+  .footer-left {
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+    font-size: 12px;
+  }
+  .footer-copy, .footer-mail { font-size: 12px; }
 
   /* モバイルではカード群をコンパクトなリスト表示に */
   .mobile-hide { display: none !important; }
