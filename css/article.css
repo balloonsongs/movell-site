@@ -186,20 +186,10 @@ a.source-link {
 .app-cta img.cta-char { width: 72px; height: auto; margin-bottom: 8px; }
 .app-cta .app-cta-title { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
 .app-cta .app-cta-desc { font-size: 13.5px; color: var(--sub); margin-bottom: 18px; line-height: 1.8; }
-a.app-store-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--green);
-  color: #fff;
-  border-radius: 14px;
-  padding: 13px 22px;
-  text-decoration: none;
-}
-.app-store-btn svg { width: 20px; height: 20px; fill: #fff; }
-.app-store-btn .btn-text { display: flex; flex-direction: column; text-align: left; }
-.app-store-btn .btn-small { font-size: 10px; opacity: 0.85; }
-.app-store-btn .btn-large { font-size: 16px; font-weight: 600; }
+.as-badge { display: inline-block; transition: opacity 0.2s ease; }
+.as-badge:hover { opacity: 0.85; }
+.as-badge img { height: 56px; width: auto; display: block; }
+@media (max-width: 768px) { .as-badge img { height: 52px; } }
 .app-cta .price-note { font-size: 12px; color: var(--sub); margin-top: 10px; }
 
 /* ── FAQ ── */

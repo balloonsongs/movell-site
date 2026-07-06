@@ -165,7 +165,10 @@ body.menu-open { overflow: hidden; }
 }
 
 /* ── HERO ── */
+.nb { display: inline-block; }
 .hero {
+  position: relative;
+  overflow: hidden;
   min-height: calc(88vh - var(--header-h));
   display: flex;
   flex-direction: column;
@@ -173,7 +176,54 @@ body.menu-open { overflow: hidden; }
   justify-content: center;
   text-align: center;
   padding: 96px 24px 88px;
-  gap: 28px;
+}
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+.hero-char { width: 118px; height: auto; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-char { animation: charFloat 3.4s ease-in-out infinite; }
+}
+.blob {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+}
+.blob-1 {
+  width: 340px; height: 340px;
+  top: -80px; left: -90px;
+  background: #E6EDE7;
+  border-radius: 62% 38% 55% 45% / 48% 60% 40% 52%;
+}
+.blob-2 {
+  width: 420px; height: 420px;
+  bottom: -140px; right: -120px;
+  background: #F1ECDF;
+  border-radius: 45% 55% 38% 62% / 55% 42% 58% 45%;
+}
+.blob-3 {
+  width: 230px; height: 230px;
+  top: 38%; right: -60px;
+  background: #DFE9E1;
+  border-radius: 55% 45% 60% 40% / 42% 55% 45% 58%;
+}
+@keyframes blobDrift1 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(24px) rotate(6deg); }
+}
+@keyframes blobDrift2 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-28px) rotate(-5deg); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .blob-1 { animation: blobDrift1 16s ease-in-out infinite; }
+  .blob-2 { animation: blobDrift2 20s ease-in-out infinite; }
+  .blob-3 { animation: blobDrift1 12s ease-in-out infinite reverse; }
 }
 .reform-badge {
   display: inline-flex;
@@ -209,9 +259,9 @@ body.menu-open { overflow: hidden; }
 }
 .hero-title {
   font-size: clamp(30px, 4.6vw, 54px);
-  font-weight: 600;
-  line-height: 1.7;
-  letter-spacing: 0.01em;
+  font-weight: 700;
+  line-height: 1.58;
+  letter-spacing: 0;
 }
 .hero-desc {
   font-size: 15.5px;
@@ -220,23 +270,10 @@ body.menu-open { overflow: hidden; }
 }
 .hero-cta { display: flex; flex-direction: column; align-items: center; gap: 14px; margin-top: 8px; }
 
-/* ── App Storeボタン / 価格ノート ── */
-.app-store-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: var(--accent);
-  color: #fff;
-  border-radius: 14px;
-  padding: 14px 26px;
-  text-decoration: none;
-  transition: opacity 0.2s ease;
-}
-.app-store-btn:hover { opacity: 0.92; }
-.app-store-btn svg { width: 22px; height: 22px; fill: #fff; }
-.app-store-btn .btn-text { display: flex; flex-direction: column; text-align: left; }
-.app-store-btn .btn-small { font-size: 11px; opacity: 0.85; }
-.app-store-btn .btn-large { font-size: 17px; font-weight: 600; }
+/* ── App Store公式バッジ / 価格ノート ── */
+.as-badge { display: inline-block; transition: opacity 0.2s ease; }
+.as-badge:hover { opacity: 0.85; }
+.as-badge img { height: 56px; width: auto; display: block; }
 
 .price-note {
   display: flex;
@@ -607,10 +644,13 @@ footer {
   .section-title { font-size: clamp(21px, 5.5vw, 26px); }
   .section-desc { font-size: 14px; margin-bottom: 40px; }
 
-  .hero { padding: 72px 24px 64px; min-height: auto; gap: 22px; }
+  .hero { padding: 56px 22px 64px; min-height: auto; }
+  .hero-inner { gap: 18px; }
+  .hero-char { width: 96px; }
   .hero-eyebrow { font-size: 13px; }
-  .hero-title { font-size: clamp(25px, 6.8vw, 32px); }
+  .hero-title { font-size: clamp(24px, 6.6vw, 30px); line-height: 1.62; }
   .hero-desc { font-size: 14px; }
+  .as-badge img { height: 52px; }
 
   .mid-cta { padding: 96px 20px; }
   .cta { padding: 110px 20px; }
