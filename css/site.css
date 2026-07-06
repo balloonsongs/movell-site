@@ -195,6 +195,7 @@ body.menu-open { overflow: hidden; }
   max-width: 520px;
 }
 .hero-copy .hero-cta { align-items: flex-start; }
+.hero-char-sp { display: none; }
 .hero-copy .price-note { justify-content: flex-start; }
 .hero-visual { display: flex; flex-direction: column; align-items: center; }
 .hero .phone-mockup {
@@ -666,6 +667,10 @@ footer {
   .hero .phone-mockup { width: min(250px, 68vw); transform: none; }
   /* テキスト層を減らす: ラベルはSP非表示（キーワードは説明文1行目に存在） */
   .hero-label { display: none; }
+  .hero-char-sp { display: block; width: 78px; height: auto; }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-char-sp { animation: charFloat 3.4s ease-in-out infinite; }
+  }
   .reform-badge { font-size: 11px; padding: 4px 12px; }
   .hero-heading { gap: 8px; }
   .hero-eyebrow { font-size: 13px; letter-spacing: 0.03em; }
