@@ -208,23 +208,10 @@ body.menu-open { overflow: hidden; }
 }
 .hero-inner .price-note { justify-content: flex-start; }
 .hero-visual { grid-area: visual; display: flex; flex-direction: column; align-items: center; }
-.phone-duo { position: relative; }
-.hero .phone-mockup.phone-main {
-  position: relative;
-  z-index: 2;
-  width: min(280px, 72vw);
-  transform: perspective(1100px) rotateY(-13deg) rotateX(3deg) rotateZ(-3deg);
+.hero .phone-mockup {
+  width: min(285px, 72vw);
+  transform: perspective(1100px) rotateY(-13deg) rotateX(3deg) rotateZ(2deg);
   box-shadow: 26px 40px 70px rgba(58, 63, 74, 0.22);
-}
-.hero .phone-mockup.phone-sub {
-  position: absolute;
-  z-index: 1;
-  width: 210px;
-  right: -110px;
-  top: -34px;
-  transform: perspective(1100px) rotateY(10deg) rotateX(2deg) rotateZ(9deg);
-  box-shadow: 18px 30px 54px rgba(58, 63, 74, 0.18);
-  opacity: 0.96;
 }
 .hero .slider-dots { margin-top: 26px; }
 .blob {
@@ -692,15 +679,9 @@ footer {
   .hero-copy { align-items: center; text-align: center; gap: 14px; align-self: auto; }
   .hero-inner .hero-cta { align-items: center; margin-top: 0; }
   .hero-inner .price-note { justify-content: center; }
-  .hero .phone-mockup.phone-main {
-    width: min(210px, 56vw);
-    transform: perspective(1000px) rotateY(-12deg) rotateZ(-4deg);
-    margin-right: 90px;
-  }
-  .hero .phone-mockup.phone-sub {
-    width: 150px;
-    right: -66px;
-    top: 10px;
+  .hero .phone-mockup {
+    width: min(230px, 62vw);
+    transform: none;
   }
   /* テキスト層を減らす: ラベルはSP非表示（キーワードは説明文1行目に存在） */
   .hero-label { display: none; }
