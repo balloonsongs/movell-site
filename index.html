@@ -34,7 +34,7 @@
   "mainEntity": [
     { "@type": "Question", "name": "法律相談はできますか?", "acceptedAnswer": { "@type": "Answer", "text": "movellは法律相談サービスではありません。離婚条件を整理するための「ノート」としてご利用ください。法的なアドバイスが必要な場合は、弁護士や法律の専門家にご相談ください。" } },
     { "@type": "Question", "name": "相手と共有できますか?", "acceptedAnswer": { "@type": "Answer", "text": "整理した内容をデータに出力し、必要に応じて相手や専門家に共有することができます。" } },
-    { "@type": "Question", "name": "子どもがいるケースにも対応していますか?", "acceptedAnswer": { "@type": "Answer", "text": "はい、対応しています。親権、養育費、親子交流など、子どもに関する論点を丁寧に整理できるステップが用意されています。" } },
+    { "@type": "Question", "name": "子どもがいるケースにも対応していますか?", "acceptedAnswer": { "@type": "Answer", "text": "はい、対応しています。親権、養育費、親子交流など、子どもに関する論点を丁寧に整理できるステップが用意されています。養子縁組がある場合の整理にも対応しています。" } },
     { "@type": "Question", "name": "情報はどこに保存されますか?", "acceptedAnswer": { "@type": "Answer", "text": "すべてのデータはお使いの端末内にのみ保存されます。外部サーバーへの送信は一切行いません。" } },
     { "@type": "Question", "name": "家族や相手に知られませんか?", "acceptedAnswer": { "@type": "Answer", "text": "入力したデータは端末内にのみ保存され、外部に送信されることはありません。Face IDによるロックも設定できます。なお、Appleの「購入の共有」をご家族と設定している場合、App Storeの購入履歴が共有されることがあります。気になる場合は、App Storeの「購入済み」リストから該当アプリを非表示にできます。" } },
     { "@type": "Question", "name": "料金はいくらですか?", "acceptedAnswer": { "@type": "Answer", "text": "買い切り1,500円です。月額料金・追加課金なし、一度の購入でずっとお使いいただけます。" } },
@@ -52,7 +52,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=2">
+<link rel="stylesheet" href="css/site.css?v=3">
 </head>
 <body>
 
@@ -86,8 +86,8 @@
 <section class="hero">
   <div class="reform-badge"><span class="reform-badge-dot"></span>2026年4月 民法改正対応</div>
   <p class="hero-label">離婚準備アプリ movell（ムーベル）</p>
-  <h1 class="hero-title">弁護士に相談する、その前に。<br>ひとりで、静かに整理する場所。</h1>
-  <p class="hero-desc">movellは、離婚を決めた人のための準備ノートアプリです。<br>弁護士への相談前にも、<br class="sp-br">自分で公正証書を作る前にも。<br>データは端末内のみ。誰にも知られず使えます。</p>
+  <h1 class="hero-title">誰かに相談する、その前に。<br>ひとりで整理する、準備ノート。</h1>
+  <p class="hero-desc">movellは、離婚を決めた人のための離婚準備アプリです。<br>弁護士への相談前にも、<br class="sp-br">自分で公正証書を作る前にも。<br>データは端末内のみ。誰にも知られず使えます。</p>
   <div class="hero-cta">
     <a href="https://apps.apple.com/jp/app/movell-%E9%9B%A2%E5%A9%9A%E3%81%AE%E6%9D%A1%E4%BB%B6%E6%95%B4%E7%90%86%E3%83%8E%E3%83%BC%E3%83%88/id6760285216" target="_blank" class="app-store-btn">
       <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
@@ -219,7 +219,7 @@
             <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           </div>
           <div class="card-title">子どもに関する論点も整理</div>
-          <div class="card-desc">共同親権、養育費の金額と期間、親子交流の頻度など、子どもに関わる項目を丁寧に整理できます。</div>
+          <div class="card-desc">共同親権、養育費の金額と期間、親子交流の頻度など、子どもに関わる項目を丁寧に整理できます。養子縁組がある場合にも対応。</div>
         </div>
       </div>
     </div>
@@ -308,22 +308,22 @@
 <!-- ユーザーの声 -->
 <section class="section section--soft reveal" id="reviews">
   <div class="section-inner">
-    <h2 class="section-title">App Storeレビューより</h2>
-    <div class="rating-summary">
-      <span class="rating-stars-lg">★★★★★</span>
-      <span class="rating-score">4.8</span>
-      <span class="rating-count">（5件の評価）</span>
-    </div>
+    <h2 class="section-title voice-title">User's voice</h2>
+    <p class="section-desc">App Storeレビューより（評価 4.8 / 5）</p>
     <div class="review-track" id="reviewTrack">
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
+        <div class="review-head">
+          <img src="images/CharactorRest2.png" alt="" class="review-avatar">
+          <div class="review-author">キマミーさん</div>
+        </div>
         <p class="review-text">「離婚がまだ現実的でない段階でも使えた。備えることが心の余裕につながると気づけた」</p>
-        <div class="review-author">キマミーさん</div>
       </div>
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
+        <div class="review-head">
+          <img src="images/CharactorRest3.png" alt="" class="review-avatar">
+          <div class="review-author">awptjmさん</div>
+        </div>
         <p class="review-text">「無駄のないシンプルな設計。買い切りで、メンタルがつらい時期でも冷静に整理できた」</p>
-        <div class="review-author">awptjmさん</div>
       </div>
     </div>
     <div class="review-dots slider-dots" id="reviewDots"></div>
@@ -377,7 +377,7 @@
       </details>
       <details>
         <summary>子どもがいるケースにも対応していますか?<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>
-        <div class="faq-answer">はい、対応しています。親権、養育費、親子交流など、子どもに関する論点を丁寧に整理できるステップが用意されています。</div>
+        <div class="faq-answer">はい、対応しています。親権、養育費、親子交流など、子どもに関する論点を丁寧に整理できるステップが用意されています。養子縁組がある場合の整理にも対応しています。</div>
       </details>
       <details>
         <summary>情報はどこに保存されますか?<svg class="chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></summary>

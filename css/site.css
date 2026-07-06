@@ -391,16 +391,20 @@ body.menu-open { overflow: hidden; }
 .feature-solo { max-width: 640px; margin: 0 auto; }
 
 /* ── レビュー ── */
-.rating-summary {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 52px;
+.voice-title {
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  letter-spacing: 0.1em;
 }
-.rating-stars-lg { color: #C9A75B; font-size: 21px; letter-spacing: 3px; }
-.rating-score { font-size: 30px; font-weight: 700; line-height: 1; }
-.rating-count { font-size: 14px; color: var(--sub); }
+.review-head { display: flex; align-items: center; gap: 12px; }
+.review-avatar {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  object-fit: contain;
+  padding: 5px;
+  flex-shrink: 0;
+}
 .review-track {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -418,7 +422,6 @@ body.menu-open { overflow: hidden; }
   gap: 16px;
   box-shadow: 0 6px 24px rgba(58, 63, 74, 0.05);
 }
-.review-stars { color: #C9A75B; font-size: 14px; letter-spacing: 2px; }
 .review-text { font-size: 15px; line-height: 2; color: var(--ink); }
 .review-author { font-size: 13px; color: var(--sub); }
 
