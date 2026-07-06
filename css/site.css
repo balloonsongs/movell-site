@@ -498,7 +498,7 @@ body.menu-open { overflow: hidden; }
   color: var(--sub);
   line-height: 2.1;
 }
-.price-box .app-store-btn { margin-top: 30px; }
+.price-box .as-badge { margin-top: 30px; }
 
 /* ── movellが生まれた理由 ── */
 .story-card {
