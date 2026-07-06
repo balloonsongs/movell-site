@@ -181,10 +181,24 @@ body.menu-open { overflow: hidden; }
   position: relative;
   z-index: 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 24px;
+  justify-content: center;
+  gap: 72px;
+  max-width: 1040px;
 }
+.hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 24px;
+  max-width: 520px;
+}
+.hero-copy .hero-cta { align-items: flex-start; }
+.hero-copy .price-note { justify-content: flex-start; }
+.hero-visual { display: flex; flex-direction: column; align-items: center; }
+.hero .phone-mockup { width: min(290px, 74vw); transform: rotate(3.5deg); }
+.hero .slider-dots { margin-top: 26px; }
 .hero-char { width: 118px; height: auto; }
 @media (prefers-reduced-motion: no-preference) {
   .hero-char { animation: charFloat 3.4s ease-in-out infinite; }
@@ -645,7 +659,11 @@ footer {
   .section-desc { font-size: 14px; margin-bottom: 40px; }
 
   .hero { padding: 56px 22px 64px; min-height: auto; }
-  .hero-inner { gap: 18px; }
+  .hero-inner { flex-direction: column; gap: 36px; }
+  .hero-copy { align-items: center; text-align: center; gap: 18px; }
+  .hero-copy .hero-cta { align-items: center; }
+  .hero-copy .price-note { justify-content: center; }
+  .hero .phone-mockup { width: min(250px, 68vw); transform: none; }
   .hero-char { width: 96px; }
   .hero-eyebrow { font-size: 13px; }
   .hero-title { font-size: clamp(24px, 6.6vw, 30px); line-height: 1.62; }
