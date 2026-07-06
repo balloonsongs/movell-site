@@ -88,13 +88,6 @@ body.menu-open { overflow: hidden; }
   letter-spacing: 0.02em;
 }
 .header-nav a:hover { color: var(--accent); }
-.header-nav .nav-cta {
-  color: #fff;
-  background: var(--accent);
-  padding: 8px 18px;
-  border-radius: 10px;
-  font-weight: 500;
-}
 
 /* ハンバーガー */
 .menu-btn {
