@@ -180,28 +180,51 @@ body.menu-open { overflow: hidden; }
 .hero-inner {
   position: relative;
   z-index: 1;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 500px) auto;
+  grid-template-areas:
+    "copy visual"
+    "cta visual";
   align-items: center;
-  justify-content: center;
-  gap: 72px;
-  max-width: 1040px;
+  column-gap: 80px;
+  row-gap: 28px;
+  max-width: 1060px;
 }
 .hero-copy {
+  grid-area: copy;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
   gap: 24px;
-  max-width: 520px;
+  align-self: end;
 }
-.hero-copy .hero-cta { align-items: flex-start; }
 .hero-char-sp { display: none; }
-.hero-copy .price-note { justify-content: flex-start; }
-.hero-visual { display: flex; flex-direction: column; align-items: center; }
-.hero .phone-mockup {
-  width: min(290px, 74vw);
-  transform: perspective(1100px) rotateY(-14deg) rotateX(3deg) rotateZ(2deg);
+.hero-inner .hero-cta {
+  grid-area: cta;
+  align-items: flex-start;
+  align-self: start;
+  margin-top: 0;
+}
+.hero-inner .price-note { justify-content: flex-start; }
+.hero-visual { grid-area: visual; display: flex; flex-direction: column; align-items: center; }
+.phone-duo { position: relative; }
+.hero .phone-mockup.phone-main {
+  position: relative;
+  z-index: 2;
+  width: min(280px, 72vw);
+  transform: perspective(1100px) rotateY(-13deg) rotateX(3deg) rotateZ(-3deg);
   box-shadow: 26px 40px 70px rgba(58, 63, 74, 0.22);
+}
+.hero .phone-mockup.phone-sub {
+  position: absolute;
+  z-index: 1;
+  width: 210px;
+  right: -110px;
+  top: -34px;
+  transform: perspective(1100px) rotateY(10deg) rotateX(2deg) rotateZ(9deg);
+  box-shadow: 18px 30px 54px rgba(58, 63, 74, 0.18);
+  opacity: 0.96;
 }
 .hero .slider-dots { margin-top: 26px; }
 .blob {
@@ -660,11 +683,25 @@ footer {
   .section-desc { font-size: 14px; margin-bottom: 40px; }
 
   .hero { padding: 40px 22px 56px; min-height: auto; }
-  .hero-inner { flex-direction: column; gap: 30px; }
-  .hero-copy { align-items: center; text-align: center; gap: 14px; }
-  .hero-copy .hero-cta { align-items: center; margin-top: 6px; }
-  .hero-copy .price-note { justify-content: center; }
-  .hero .phone-mockup { width: min(250px, 68vw); transform: none; }
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "copy" "visual" "cta";
+    row-gap: 30px;
+  }
+  .hero-copy { align-items: center; text-align: center; gap: 14px; align-self: auto; }
+  .hero-inner .hero-cta { align-items: center; margin-top: 0; }
+  .hero-inner .price-note { justify-content: center; }
+  .hero .phone-mockup.phone-main {
+    width: min(210px, 56vw);
+    transform: perspective(1000px) rotateY(-12deg) rotateZ(-4deg);
+    margin-right: 90px;
+  }
+  .hero .phone-mockup.phone-sub {
+    width: 150px;
+    right: -66px;
+    top: 10px;
+  }
   /* テキスト層を減らす: ラベルはSP非表示（キーワードは説明文1行目に存在） */
   .hero-label { display: none; }
   .hero-char-sp { display: block; width: 78px; height: auto; }
