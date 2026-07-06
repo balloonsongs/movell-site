@@ -200,6 +200,13 @@ body.menu-open { overflow: hidden; }
   color: var(--accent);
   letter-spacing: 0.08em;
 }
+.hero-heading { display: flex; flex-direction: column; gap: 16px; }
+.hero-eyebrow {
+  font-size: 15px;
+  color: var(--sub);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
 .hero-title {
   font-size: clamp(30px, 4.6vw, 54px);
   font-weight: 600;
@@ -601,6 +608,7 @@ footer {
   .section-desc { font-size: 14px; margin-bottom: 40px; }
 
   .hero { padding: 72px 24px 64px; min-height: auto; gap: 22px; }
+  .hero-eyebrow { font-size: 13px; }
   .hero-title { font-size: clamp(25px, 6.8vw, 32px); }
   .hero-desc { font-size: 14px; }
 
