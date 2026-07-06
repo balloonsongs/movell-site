@@ -203,10 +203,6 @@ body.menu-open { overflow: hidden; }
   box-shadow: 26px 40px 70px rgba(58, 63, 74, 0.22);
 }
 .hero .slider-dots { margin-top: 26px; }
-.hero-char { width: 118px; height: auto; }
-@media (prefers-reduced-motion: no-preference) {
-  .hero-char { animation: charFloat 3.4s ease-in-out infinite; }
-}
 .blob {
   position: absolute;
   z-index: 0;
@@ -668,7 +664,6 @@ footer {
   .hero-copy .hero-cta { align-items: center; }
   .hero-copy .price-note { justify-content: center; }
   .hero .phone-mockup { width: min(250px, 68vw); transform: none; }
-  .hero-char { width: 96px; }
   .hero-eyebrow { font-size: 13px; }
   .hero-title { font-size: clamp(24px, 6.6vw, 30px); line-height: 1.62; }
   .hero-desc { font-size: 14px; }
