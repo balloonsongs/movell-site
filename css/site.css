@@ -658,15 +658,28 @@ footer {
   .section-title { font-size: clamp(21px, 5.5vw, 26px); }
   .section-desc { font-size: 14px; margin-bottom: 40px; }
 
-  .hero { padding: 56px 22px 64px; min-height: auto; }
-  .hero-inner { flex-direction: column; gap: 36px; }
-  .hero-copy { align-items: center; text-align: center; gap: 18px; }
-  .hero-copy .hero-cta { align-items: center; }
+  .hero { padding: 40px 22px 56px; min-height: auto; }
+  .hero-inner { flex-direction: column; gap: 30px; }
+  .hero-copy { align-items: center; text-align: center; gap: 14px; }
+  .hero-copy .hero-cta { align-items: center; margin-top: 6px; }
   .hero-copy .price-note { justify-content: center; }
   .hero .phone-mockup { width: min(250px, 68vw); transform: none; }
-  .hero-eyebrow { font-size: 13px; }
-  .hero-title { font-size: clamp(24px, 6.6vw, 30px); line-height: 1.62; }
-  .hero-desc { font-size: 14px; }
+  /* テキスト層を減らす: ラベルはSP非表示（キーワードは説明文1行目に存在） */
+  .hero-label { display: none; }
+  .reform-badge { font-size: 11px; padding: 4px 12px; }
+  .hero-heading { gap: 8px; }
+  .hero-eyebrow { font-size: 13px; letter-spacing: 0.03em; }
+  .hero-title {
+    font-size: clamp(25px, 6.9vw, 31px);
+    line-height: 1.55;
+    font-feature-settings: "palt";
+    letter-spacing: 0.02em;
+  }
+  .hero-desc { font-size: 13.5px; line-height: 1.95; }
+  /* ブロブは端に小さく退避（文字と重ねない） */
+  .blob-1 { width: 220px; height: 220px; top: -110px; left: -110px; }
+  .blob-2 { width: 260px; height: 260px; bottom: -130px; right: -120px; }
+  .blob-3 { display: none; }
   .as-badge img { height: 52px; }
 
   .mid-cta { padding: 96px 20px; }
