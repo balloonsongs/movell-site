@@ -663,7 +663,7 @@ footer {
   gap: 24px;
   flex-wrap: wrap;
 }
-.footer-left { display: flex; flex-direction: column; gap: 8px; }
+.footer-left { display: flex; flex-direction: row; align-items: center; gap: 16px; }
 .footer-copy { font-size: 13px; color: var(--sub); }
 .footer-mail { font-size: 13px; color: var(--sub); text-decoration: none; }
 .footer-mail:hover { color: var(--accent); }
