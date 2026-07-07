@@ -517,6 +517,29 @@ body.menu-open { overflow: hidden; }
 }
 .price-box .as-badge { margin-top: 30px; }
 
+/* ── ユースケースカード ── */
+.usecase-track {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.usecase-card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 34px 26px;
+  width: 310px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+  box-shadow: 0 6px 24px rgba(58, 63, 74, 0.05);
+}
+.case-char { width: 96px; height: 96px; object-fit: contain; }
+.usecase-card .card-title { font-size: 16px; }
+.usecase-card .card-desc { font-size: 13.5px; }
+
 /* ── movellが生まれた理由 ── */
 .story-card {
   background: var(--card);
@@ -537,6 +560,14 @@ body.menu-open { overflow: hidden; }
   margin: 30px 0;
 }
 .story-close { font-size: 15px; color: var(--sub); }
+.story-origin {
+  margin-top: 30px;
+  padding-top: 26px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--sub);
+  line-height: 2;
+}
 
 /* ── FAQ ── */
 .faq-card {
@@ -727,6 +758,25 @@ footer {
     font-size: 12px;
   }
   .footer-copy, .footer-mail { font-size: 12px; }
+
+  /* ユースケース: 横スワイプ */
+  .usecase-track {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 14px;
+    padding: 4px 2px 14px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .usecase-track::-webkit-scrollbar { display: none; }
+  .usecase-card {
+    flex: 0 0 76%;
+    scroll-snap-align: center;
+    padding: 26px 22px;
+  }
+  .case-char { width: 82px; height: 82px; }
 
   /* モバイルではカード群をコンパクトなリスト表示に */
   .mobile-hide { display: none !important; }
