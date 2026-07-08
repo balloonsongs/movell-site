@@ -451,6 +451,67 @@ body.menu-open { overflow: hidden; }
 .card-featured .card-desc { color: rgba(255,255,255,0.8); }
 .feature-solo { max-width: 640px; margin: 0 auto; }
 
+/* ── 実機キャプチャ付き機能紹介（muute風 交互レイアウト） ── */
+.feature-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 32px 72px;
+  max-width: 800px;
+  margin: 0 auto 88px;
+}
+.feature-row:last-child { margin-bottom: 0; }
+.feature-row--flip .feature-visual { order: -1; }
+.feature-row .group-label { text-align: left; margin-bottom: 14px; }
+.feature-row-title {
+  font-size: clamp(19px, 2.2vw, 24px);
+  font-weight: 700;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.feature-row-desc { font-size: 14.5px; color: var(--sub); }
+.feature-row-points {
+  list-style: none;
+  margin-top: 18px;
+  display: grid;
+  gap: 10px;
+}
+.feature-row-points li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 13.5px;
+  color: var(--sub);
+  line-height: 1.8;
+}
+.feature-row-points li::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 0.5em;
+  width: 6px;
+  height: 10px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: rotate(40deg);
+}
+.phone-mockup--sm {
+  width: min(240px, 62vw);
+  border-radius: 40px;
+  padding: 10px;
+  box-shadow: 0 24px 48px rgba(58, 63, 74, 0.14);
+}
+.phone-mockup--sm .phone-screen { border-radius: 32px; }
+
+@media (max-width: 768px) {
+  .feature-row {
+    grid-template-columns: 1fr;
+    gap: 26px;
+    margin-bottom: 64px;
+  }
+  .feature-row--flip .feature-visual { order: 0; }
+  .feature-visual { justify-self: center; }
+}
+
 /* ── レビュー ── */
 .voice-title {
   font-family: "Zen Kaku Gothic New", sans-serif;
