@@ -178,6 +178,11 @@
     margin-bottom: 14px;
     color: var(--text);
   }
+  .section p a {
+    color: var(--green);
+    text-decoration-color: rgba(61, 90, 69, .35);
+    text-underline-offset: 3px;
+  }
 
   /* ── チェックリスト ── */
   .checklist {
@@ -271,28 +276,32 @@
 
   .source-links {
     display: grid;
-    gap: 10px;
-    margin: 20px 0 0;
+    gap: 7px;
+    margin: 22px 0 0;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+  .source-links::before {
+    content: "関連情報・出典";
+    color: var(--sub);
+    font-size: 12px;
+    font-weight: 700;
   }
   .source-link {
     display: block;
-    padding: 14px 16px;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    background: var(--white);
+    padding: 3px 0;
     color: inherit;
     text-decoration: none;
-    transition: border-color .2s ease, background-color .2s ease;
+    transition: opacity .2s ease;
+    cursor: pointer;
   }
-  .source-link:hover {
-    border-color: var(--green);
-    background: #F8FAF8;
-  }
+  .source-link:hover { opacity: .72; }
+  .source-link:hover .source-name { text-decoration: underline; }
   .source-name {
     display: block;
     color: var(--green);
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 13.5px;
+    font-weight: 600;
   }
   .source-desc {
     display: block;
@@ -314,12 +323,20 @@
 
   /* ── CTA ── */
   .cta-section {
-    background: var(--green);
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 40px 32px;
+    padding: 34px 32px;
     text-align: center;
     margin: 48px 0;
-    color: white;
+    color: var(--text);
+  }
+  .cta-char {
+    display: block;
+    width: 76px;
+    height: 76px;
+    object-fit: contain;
+    margin: 0 auto 10px;
   }
   .cta-label {
     font-size: 13px;
@@ -332,11 +349,11 @@
     font-weight: 700;
     margin-bottom: 10px;
     line-height: 1.5;
-    color: white;
+    color: var(--text);
   }
   .cta-desc {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--sub);
     margin-bottom: 24px;
     line-height: 1.7;
   }
@@ -464,9 +481,9 @@
       話し合いがまとまらない場合は、家庭裁判所に<strong>調停</strong>を申し立てる方法があります。調停でも合意できない場合は、離婚訴訟（裁判離婚）という手続きがあります。
     </div>
     <div class="source-links" aria-label="協議離婚に関連する公的情報">
-      <a class="source-link" href="https://www.courts.go.jp/saiban/syurui/syurui_kazi/kazi_07_01/index.html" target="_blank" rel="noopener">
-        <span class="source-name">裁判所｜夫婦関係調整調停（離婚）</span>
-        <span class="source-desc">申立ての概要、必要書類、手続きの案内</span>
+      <a class="source-link" href="https://www.moj.go.jp/ONLINE/FAMILYREGISTER/5-3.html" target="_blank" rel="noopener">
+        <span class="source-name">法務省｜離婚届</span>
+        <span class="source-desc">協議離婚の届出方法、提出先、証人、必要書類の公式案内</span>
       </a>
     </div>
   </section>
@@ -477,7 +494,7 @@
     <p>未成年の子どもがいる場合、以下の項目を決める必要があります。特に<strong>親権者の決定</strong>は離婚届の記載事項のため、合意がなければ届出ができません。</p>
 
     <h3 class="section-sub">① 親権</h3>
-    <p>子どもの養育に関する権利と責任のことです。2026年4月の民法改正により、父母双方が親権を持つ<strong>共同親権</strong>も選択できるようになりました。ただし、DVや虐待のおそれがあると判断される場合は共同親権は認められません。どちらの形にするか、子どもにとって何がよいかを中心に話し合うことが大切です。</p>
+    <p>子どもの養育に関する権利と責任のことです。2026年4月の民法改正により、父母双方が親権を持つ<strong><a href="articles/kyodoshinken.html">共同親権</a></strong>も選択できるようになりました。ただし、DVや虐待のおそれがあると判断される場合は共同親権は認められません。どちらの形にするか、子どもにとって何がよいかを中心に話し合うことが大切です。</p>
     <ul class="checklist">
       <li>親権者をどちらにするか（単独親権・共同親権の選択）</li>
       <li>子どもが主に暮らす家はどちらか</li>
@@ -485,7 +502,7 @@
     </ul>
 
     <h3 class="section-sub">② 養育費</h3>
-    <p>子どもと離れて暮らす親が、子どもの生活・教育費として支払うお金です。金額は裁判所が公表している<strong>養育費算定表</strong>を参考にすることが多いですが、双方の合意によって自由に決めることができます。2026年4月の改正により、離婚時に取り決めがない場合でも<strong>月額2万円の法定養育費</strong>を請求できる制度が設けられました。</p>
+    <p>子どもと離れて暮らす親が、子どもの生活・教育費として支払うお金です。金額は裁判所が公表している<strong><a href="articles/yoikuhi.html">養育費算定表</a></strong>を参考にすることが多いですが、双方の合意によって自由に決めることができます。2026年4月の改正により、離婚時に取り決めがない場合でも<strong>月額2万円の法定養育費</strong>を請求できる制度が設けられました。</p>
     <ul class="checklist">
       <li>
         月々の金額
@@ -522,14 +539,6 @@
       </li>
     </ul>
     <div class="source-links" aria-label="子どもに関する関連情報">
-      <a class="source-link" href="articles/kyodoshinken.html">
-        <span class="source-name">movell｜共同親権について確認する</span>
-        <span class="source-desc">2026年4月施行の制度と、整理しておきたい項目</span>
-      </a>
-      <a class="source-link" href="articles/yoikuhi.html">
-        <span class="source-name">movell｜養育費について確認する</span>
-        <span class="source-desc">金額、支払期間、公正証書などの基本情報</span>
-      </a>
       <a class="source-link" href="https://www.courts.go.jp/toukei_siryou/siryo/H30shihou_houkoku/index.html" target="_blank" rel="noopener">
         <span class="source-name">裁判所｜養育費・婚姻費用算定表</span>
         <span class="source-desc">家庭裁判所で参照される算定表と利用方法</span>
@@ -569,6 +578,12 @@
     <div class="caution-box">
       結婚前から持っていた財産や、婚姻中に相続・贈与で得た財産は、原則として財産分与の対象外です。財産分与の請求は、<strong>離婚後5年以内</strong>に行う必要があります（2026年4月改正）。
     </div>
+    <div class="source-links" aria-label="財産分与に関する公的情報">
+      <a class="source-link" href="https://www.moj.go.jp/content/001449160.pdf" target="_blank" rel="noopener">
+        <span class="source-name">法務省｜父母の離婚後の子の養育に関する民法等改正</span>
+        <span class="source-desc">財産分与の請求期間を含む改正内容</span>
+      </a>
+    </div>
 
     <h3 class="section-sub">② 年金分割</h3>
     <p>婚姻期間中の厚生年金の一部を、離婚後に分け合う制度です。2026年4月1日以降に離婚した場合、請求期限は<strong>離婚後5年以内</strong>に延長されました（2026年4月1日より前に離婚した場合は2年以内）。年金事務所で手続きを行います。</p>
@@ -576,14 +591,10 @@
       <li>年金分割をするかどうか</li>
       <li>分割割合の合意（合意分割の場合）</li>
     </ul>
-    <div class="source-links" aria-label="財産分与と年金分割に関する公的情報">
-      <a class="source-link" href="https://www.moj.go.jp/content/001449160.pdf" target="_blank" rel="noopener">
-        <span class="source-name">法務省｜父母の離婚後の子の養育に関する民法等改正</span>
-        <span class="source-desc">財産分与の請求期間を含む改正内容</span>
-      </a>
-      <a class="source-link" href="https://www.nenkin.go.jp/service/pamphlet/kyufu.html" target="_blank" rel="noopener">
-        <span class="source-name">日本年金機構｜年金給付関係パンフレット</span>
-        <span class="source-desc">離婚時の年金分割を含む公式案内</span>
+    <div class="source-links" aria-label="年金分割に関する公的情報">
+      <a class="source-link" href="https://www.nenkin.go.jp/service/pamphlet/kyufu.html#cmsbunkatsu" target="_blank" rel="noopener">
+        <span class="source-name">日本年金機構｜離婚時の年金分割</span>
+        <span class="source-desc">年金分割制度と手続きの公式パンフレット</span>
       </a>
     </div>
 
@@ -655,7 +666,7 @@
         <span class="source-name">movell｜離婚協議書と公正証書の違い</span>
         <span class="source-desc">書面化の方法と作成前に確認したいこと</span>
       </a>
-      <a class="source-link" href="https://www.koshonin.gr.jp/notary/ow02" target="_blank" rel="noopener">
+      <a class="source-link" href="https://www.koshonin.gr.jp/notary/ow07" target="_blank" rel="noopener">
         <span class="source-name">日本公証人連合会｜離婚に関する公正証書</span>
         <span class="source-desc">公正証書に記載する内容や作成手続き</span>
       </a>
@@ -674,20 +685,11 @@
       <div class="card-title">公証人（公証役場）</div>
       <p>公正証書の作成を依頼できます。全国の公証役場で相談を受け付けています。</p>
     </div>
-    <div class="card">
-      <div class="card-title">法テラス（日本司法支援センター）</div>
-      <p>収入が一定以下の方を対象とした法律相談援助制度があります。審査を通じて、弁護士・司法書士への相談を無料で利用できます（同一の問題について回数制限あり）。弁護士費用の立替制度も利用できる場合があります。</p>
-    </div>
-    <div class="source-links" aria-label="専門家への相談に関する公的情報">
-      <a class="source-link" href="https://www.houterasu.or.jp/site/soudan-tatekae/" target="_blank" rel="noopener">
-        <span class="source-name">法テラス｜無料法律相談・弁護士等費用の立替</span>
-        <span class="source-desc">利用条件、相談方法、費用立替制度の公式案内</span>
-      </a>
-    </div>
   </section>
 
   <!-- CTA -->
   <div class="cta-section">
+    <img src="images/column-reading.png" alt="" class="cta-char" width="320" height="320" loading="lazy" decoding="async">
     <h2 class="cta-title">話し合いの準備に、movellを使ってみませんか</h2>
     <p class="cta-desc">親権・養育費・財産分与・親子交流をステップ形式で整理し、PDFにまとめることができます。ログイン不要・データは端末内のみ保存。</p>
     <a href="https://apps.apple.com/jp/app/movell-%E9%9B%A2%E5%A9%9A%E3%81%AE%E6%9D%A1%E4%BB%B6%E6%95%B4%E7%90%86%E3%83%8E%E3%83%BC%E3%83%88/id6760285216" target="_blank" class="as-badge"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/ja-jp" alt="App Storeからダウンロード"></a>
