@@ -226,6 +226,43 @@ a.source-link {
 .article-card .article-card-desc { font-size: 13.5px; color: var(--sub); line-height: 1.7; }
 .article-card .article-card-date { font-size: 12px; color: var(--sub); margin-top: 10px; }
 
+/* ── 関連記事 ── */
+.related-reading {
+  margin: 40px 0 12px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+}
+.related-reading-title {
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-weight: 700;
+}
+.related-reading-list {
+  display: grid;
+  gap: 10px;
+}
+.related-reading-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 15px 17px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--white);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+.related-reading-link::after {
+  content: "→";
+  color: var(--green);
+  flex-shrink: 0;
+}
+.related-reading-link:hover { border-color: var(--green); }
+
 /* ── フッター ── */
 .site-footer {
   border-top: 1px solid var(--border);
