@@ -460,7 +460,16 @@ body.menu-open { overflow: hidden; }
   max-width: 800px;
   margin: 0 auto 88px;
 }
+.feature-copy,
+.feature-visual { min-width: 0; }
 .feature-row:last-child { margin-bottom: 0; }
+.feature-row--document { grid-template-columns: minmax(0, 1fr) 240px; }
+.feature-row--document .feature-visual {
+  width: 240px;
+  max-width: 240px;
+  overflow: visible;
+}
+.pdf-document-sample { width: 100%; }
 .feature-row--flip .feature-visual { order: -1; }
 .feature-row .group-label { text-align: left; margin-bottom: 14px; }
 .feature-row-title {
@@ -501,6 +510,31 @@ body.menu-open { overflow: hidden; }
   box-shadow: 0 24px 48px rgba(58, 63, 74, 0.14);
 }
 .phone-mockup--sm .phone-screen { border-radius: 32px; }
+.pdf-document-preview {
+  width: 240px;
+  max-width: 100%;
+  aspect-ratio: 210 / 291;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(58, 63, 74, 0.1);
+}
+.pdf-document-preview img {
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+.pdf-document-caption {
+  margin-top: 10px;
+  color: var(--sub);
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: center;
+}
 
 @media (max-width: 768px) {
   .feature-row {
@@ -508,8 +542,14 @@ body.menu-open { overflow: hidden; }
     gap: 26px;
     margin-bottom: 64px;
   }
+  .feature-row--document { grid-template-columns: 1fr; }
+  .feature-row--document .feature-visual {
+    width: min(240px, 70vw);
+    max-width: 70vw;
+  }
   .feature-row--flip .feature-visual { order: 0; }
   .feature-visual { justify-self: center; }
+  .pdf-document-preview { width: min(240px, 70vw); }
 }
 
 /* ── レビュー ── */
