@@ -183,9 +183,15 @@ a.source-link {
   margin: 48px 0;
   text-align: center;
 }
-.app-cta img.cta-char { width: 72px; height: auto; margin-bottom: 8px; }
+.app-cta img.cta-char { width: 84px; height: auto; margin-bottom: 14px; }
 .app-cta .app-cta-title { font-size: 17px; font-weight: 600; margin-bottom: 8px; }
-.app-cta .app-cta-desc { font-size: 13.5px; color: var(--sub); margin-bottom: 18px; line-height: 1.8; }
+.app-cta .app-cta-desc {
+  max-width: 680px;
+  margin: 0 auto 22px;
+  color: var(--sub);
+  font-size: 14px;
+  line-height: 2;
+}
 .as-badge { display: inline-block; transition: opacity 0.2s ease; }
 .as-badge:hover { opacity: 0.85; }
 .as-badge img { height: 56px; width: auto; display: block; }
